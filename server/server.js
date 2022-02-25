@@ -4,7 +4,7 @@ import { MongoClient } from 'mongodb';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import dotenvExpand from 'dotenv-expand';
-// import routes from './routes.js';
+import userRoutes from './routes/user.js';
 import config from './config/serverconf.js';
 
 const envs = dotenv.config();
@@ -25,6 +25,14 @@ async function testroute (fastify, options) {
 // fastify.register(fastifyCors, () => {
 //
 // });
+
+var routeList = [userRoutes];
+for(let idx in routeList) {
+  console.log("routes: ", routeList[idx]);
+  routeList[idx].forEach((route, idx) => {
+    fastify.route(route);
+  });
+}
 
 fastify.register(testroute);
 

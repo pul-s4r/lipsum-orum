@@ -16,6 +16,6 @@ const userModel = Schema({
   files: [{type: ObjectId}]
 });
 
-const UserModel = mongoose.model('User', postSchema);
+const UserModel = mongoose.model('User', userModel);
 
 export default UserModel;
