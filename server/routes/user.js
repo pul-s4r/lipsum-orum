@@ -8,18 +8,18 @@ const userRoutes = [
   },
   {
     method: 'GET',
-    url: '/user/',
+    url: '/user',
     handler: UserController.getUsers,
   },
   {
     method: 'POST',
-    url: '/user/',
+    url: '/user',
     handler: UserController.addUser,
   },
   {
     method: 'PUT',
-    url: '/user/:id',
     handler: UserController.editUser,
+    url: '/user/:id',
   },
   {
     method: 'DELETE',
