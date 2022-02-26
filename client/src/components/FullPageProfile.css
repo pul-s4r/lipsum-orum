@@ -31,4 +31,9 @@ h2, h3, p{
 
   .container{
       display:inline-block;
+      margin-top: 20px;
   }
+
+  .header{
+    display:inline-block;
+}
