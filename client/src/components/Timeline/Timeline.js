@@ -6,11 +6,11 @@ import classes from "./Timeline.module.css";
 import TimelineHeader from "./TimelineHeader";
 import TimelineEventCard from "./TimelineEventCard";
 import TimelineFooter from "./TimelineFooter";
-import Modal from "../UI/Modal";
 import { useState } from "react";
+import InviteMemberModal from "./InviteMemberModal/InviteMemberModal";
 
 const Timeline = (props) => {
-  const [isModalOpen, setIsModalOpen] = useState(true);
+  const [isInviteMemberModalOpen, setIsInviteMemberModalOpen] = useState(true);
   const cardClickaHandler = (eventId) => {
     console.log(eventId);
   };
@@ -25,20 +25,22 @@ const Timeline = (props) => {
     );
   });
 
-  const modalCloseHandler = () => {
-    setIsModalOpen(false);
+  const isInviteMemeberModalOpenHandler = () => {
+    setIsInviteMemberModalOpen(true);
+  };
+
+  const isInviteMemeberModalCloseHandler = () => {
+    setIsInviteMemberModalOpen(false);
   };
 
   return (
     <div className={classes.timeline}>
-      {isModalOpen && (
-        <Modal onClose={modalCloseHandler}>
-          <div>Anything put here inside modal</div>
-        </Modal>
+      {isInviteMemberModalOpen && (
+        <InviteMemberModal onClose={isInviteMemeberModalCloseHandler} />
       )}
       <TimelineHeader />
       <Chrono {...config.CHRONO_TIMELINE_SETTINGS}>{events}</Chrono>
-      <TimelineFooter />
+      <TimelineFooter onClickInviteMemeber={isInviteMemeberModalOpenHandler} />
     </div>
   );
 };

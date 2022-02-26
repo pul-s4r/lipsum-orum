@@ -15,6 +15,7 @@ const TimelineFooter = (props) => {
         <FontAwesomeIcon
           className={classes["control-panel__icon"]}
           icon={faUserGroup}
+          onClick={props.onClickInviteMemeber}
         />
         <FontAwesomeIcon
           className={classes["control-panel__icon"]}
