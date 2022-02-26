@@ -3,6 +3,7 @@ import "./App.css";
 import RegistrationForm from "./components/RegistrationForm/RegistrationForm.js";
 import LoginForm from "./components/LoginForm/LoginForm.js";
 import Timeline from "./components/Timeline/Timeline";
+import AddMemoryModal from "./components/AddMemoryModal/AddMemoryModal";
 
 function App() {
   return (

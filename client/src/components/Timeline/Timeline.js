@@ -8,9 +8,10 @@ import TimelineEventCard from "./TimelineEventCard";
 import TimelineFooter from "./TimelineFooter";
 import Modal from "../UI/Modal";
 import { useState } from "react";
+import AddMemoryModal from "../AddMemoryModal/AddMemoryModal";
 
 const Timeline = (props) => {
-  const [isModalOpen, setIsModalOpen] = useState(true);
+  const [isMemoryModalOpen, setIsMemoryModalOpen] = useState(true);
   const cardClickaHandler = (eventId) => {
     console.log(eventId);
   };
@@ -24,21 +25,24 @@ const Timeline = (props) => {
       />
     );
   });
+  const addMemoryHandler = () => {
+    setIsMemoryModalOpen(true);
+  };
 
-  const modalCloseHandler = () => {
-    setIsModalOpen(false);
+  const addMemoryModalCloseHandler = () => {
+    setIsMemoryModalOpen(false);
   };
 
   return (
     <div className={classes.timeline}>
-      {isModalOpen && (
-        <Modal onClose={modalCloseHandler}>
+      {isMemoryModalOpen && (
+        <AddMemoryModal onClose={addMemoryModalCloseHandler}>
           <div>Anything put here inside modal</div>
-        </Modal>
+        </AddMemoryModal>
       )}
       <TimelineHeader />
       <Chrono {...config.CHRONO_TIMELINE_SETTINGS}>{events}</Chrono>
-      <TimelineFooter />
+      <TimelineFooter onAddMemory={addMemoryHandler} />
     </div>
   );
 };
