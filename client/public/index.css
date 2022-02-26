@@ -2,5 +2,8 @@ html,
 body,
 #root {
   height: 100%;
-  font-family: "Lato", sans-serif;
+  font-family: "Lexend", sans-serif;
+}
+* {
+  box-sizing: border-box;
 }
