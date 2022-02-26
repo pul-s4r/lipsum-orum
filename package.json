@@ -1,0 +1,28 @@
+{
+  "name": "lipsum-orum",
+  "version": "1.0.0",
+  "description": "Developed for Unihack 2022",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pul-s4r/lipsum-orum.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pul-s4r/lipsum-orum/issues"
+  },
+  "homepage": "https://github.com/pul-s4r/lipsum-orum#readme",
+  "devDependencies": {
+    "react-router-dom": "^6.2.1"
+  },
+  "dependencies": {
+    "bootstrap": "^5.1.3",
+    "react-bootstrap": "^2.1.2",
+    "react-chrono": "^1.14.0",
+    "react-native-web": "^0.17.6"
+  }
+}

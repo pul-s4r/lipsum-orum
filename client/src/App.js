@@ -23,9 +23,7 @@ function App() {
         profileUrl: "",
         description: "Such a fun night!! We should do it again!"}],
       tags: ["Birthday", "Party", "Ken", "2022"]
-        
       }
-    
   ]
   return (
     <div className="App">

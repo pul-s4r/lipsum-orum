@@ -1,11 +1,23 @@
 import './LargeEventModal.css';
-// import Comments from '../Comments/Comments';
+import Comments from '../Comments/Comments';
 import Comment from '../Comment/Comment';
 import Tags from '../Tags/Tags';
 
 function LargeEventModal(props) {
-    const profilePic = props.element[0].pictureUrl;
+    // const profilePic = props.element[0].pictureUrl;
+    // const arrayOfObjects = props.element[0].comments;
+    // console.log(arrayOfObjects)
     // const imageLink = `../images/${profilePic}`;
+
+    // const arrayOfObjects = [
+    //     { sender: "Americano", message: "Single", profileUrl:"test" },
+    //     { sender: "Espresso", message: "Single", profileUrl:"test2" },
+    //   ];
+
+      const result = props.element[0].comments.map((eventObj) => (
+         eventObj.comments
+      ))
+console.log(result)
     return (
         <div className="content">
             <div className="header">
@@ -24,11 +36,18 @@ function LargeEventModal(props) {
                 <div className="column left" >
 
                     <h3 className="subheading">Comments</h3>
+                    {/* {arrayOfObjects.map(item => <p item={item}></p>)} */}
+
+                {/* <p>{result}</p> */}
+                <Comments comment={result}></Comments>
+
+
+                    {/* <p>{arrayOfObjects.comments}</p> */}
                     {/* {arrayOfObjects.map(item => <p>{item}</p>)} */}
                     {/* {props.element[0].comments.map(item => <Comment item={item}></Comment>)} */}
+                    {/* <Comment comment={props.element[0].comments}></Comment>
                     <Comment comment={props.element[0].comments}></Comment>
-                    <Comment comment={props.element[0].comments}></Comment>
-                    <Comment comment={props.element[0].comments}></Comment>
+                    <Comment comment={props.element[0].comments}></Comment> */}
                 </div>
                 <div className="column right" >
                    

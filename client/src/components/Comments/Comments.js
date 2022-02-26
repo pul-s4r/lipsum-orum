@@ -1,12 +1,12 @@
 import Comment from '../Comment/Comment';
 
-export default function Tags(props) {
-    const arrayOfObjects = props.tags
+export default function Comments(props) {
+    const arrayOfObjects = props.comment
   return (
 
       <div>
           <p>hi</p>
-      {/* {arrayOfObjects.map(item => <p>{item}</p>)} */}
+      {arrayOfObjects.map(item => <Comment comment={[item]}>{[item]}</Comment>)}
 
         </div>
   );
