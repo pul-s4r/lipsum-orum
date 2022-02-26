@@ -1,0 +1,66 @@
+.parent_container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.loginPage {
+  background-color: var(--primary-main);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginPage h1 {
+  color: #ffffff;
+}
+
+.loginPage h4 {
+  margin: 0;
+}
+
+.loginForm {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.loginForm form {
+  width: 15%;
+}
+
+.loginPage input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 15px 0;
+  display: block;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  box-sizing: border-box;
+  padding: 1rem;
+}
+
+.loginPage button {
+  padding: 6px 20px;
+  margin: 8px 0;
+  background-color: var(--secondary-light);
+  border: none;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 14px;
+  width: 100%;
+  align-content: center;
+}
+
+.loginPage img {
+  width: 20%;
+  position: static;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

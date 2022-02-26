@@ -20,6 +20,7 @@ const TimelineFooter = (props) => {
         <FontAwesomeIcon
           className={classes["control-panel__icon"]}
           icon={faCalendarPlus}
+          onClick={props.onClickAddMemory}
         />
         <img className={classes.logo} src={logo} alt="brand-logo" />
         <FontAwesomeIcon

@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@400;600&family=Roboto&display=swap");
+
+.add-comment {
+  display: flex;
+  align-items: center;
+  height: 95px;
+  width: 342px;
+  background-color: #ffff;
+  box-shadow: 5px 5px 10px #c4c4c4;
+  border-radius: 10px;
+  padding: 10px 10px 10px;
+  margin: 5px 0px;
+}
+
+.profile-picture {
+  height: 55px;
+  width: 55px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.comment-form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  margin-left: 10px;
+  border-radius: 10px;
+  box-shadow: 2px 5px 7px #b8b8b8;
+}
+
+.comment-input {
+  height: 60px;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  background-color: #f8f8f8;
+  resize: none;
+  padding: 10px;
+}
+
+.postButton {
+  margin-left: 5px;
+  height: 60px;
+  width: 60px;
+  border-radius: 5px;
+  background-color: #4a71ff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* 
+.postButton {
+  width: 52px;
+  height: 30px;
+  margin-left: 20px;
+  position: absolute;
+  right: 10px;
+  top: 20px;
+  bottom: 3px;
+  border: 0;
+  background: #4a71ff;
+  color: #fff;
+  padding: 0 10px;
+  z-index: 2;
+  font-family: "Lexend", sans-serif;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+.comment {
+  display: flex;
+  align-items: center;
+  padding: 10px 10px 10px;
+  margin: 5px 0px;
+  height: 95px;
+  width: 342px;
+  background-color: #ffff;
+  box-shadow: 5px 5px 10px #c4c4c4;
+  border-radius: 10px;
+} */
