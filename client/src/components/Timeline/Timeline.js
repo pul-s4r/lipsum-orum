@@ -6,6 +6,7 @@ import classes from "./Timeline.module.css";
 import TimelineHeader from "./TimelineHeader";
 import TimelineEventCard from "./TimelineEventCard";
 import TimelineFooter from "./TimelineFooter";
+import Modal from "../UI/Modal";
 
 const Timeline = (props) => {
   const cardClickaHandler = (eventId) => {
@@ -24,6 +25,9 @@ const Timeline = (props) => {
 
   return (
     <div className={classes.timeline}>
+      <Modal>
+        <div>Anything put here inside modal</div>
+      </Modal>
       <TimelineHeader />
       <Chrono {...config.CHRONO_TIMELINE_SETTINGS}>{events}</Chrono>
       <TimelineFooter />
