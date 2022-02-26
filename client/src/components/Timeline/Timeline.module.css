@@ -1,29 +1,8 @@
 .timeline {
   display: flex;
   flex-direction: column;
+  align-items: center;
   height: 100%;
   width: auto;
-  background-image: linear-gradient(#4a71ff, #1dabfd);
+  background-image: linear-gradient(#1dabfd, #4a71ff);
 }
-
-.card {
-  height: 100%;
-  width: 100%;
-  background-color: aqua;
-}
-
-/*
-
-
-  <Chrono items={items} mode="HORIZONTAL" />
-  <Chrono items={items} mode="VERTICAL" />
-  <Chrono items={items} mode="VERTICAL_ALTERNATING" />
-
-  < Timeline item Model >
-    title	- title of the timeline item	String
-    cardTitle	- title that is displayed on the timeline card	String
-    cardSubtitle - text displayed in the timeline card	String
-    cardDetailedText -detailed text displayed in the timeline card	String or String[]
-    media	- media object to set image or video.	Object
-    url	- url to be used in the title.	String
-*/

@@ -1,10 +1,13 @@
+.card-container {
+  cursor: pointer;
+}
 .overlay {
   display: flex;
   flex-direction: column;
   position: absolute;
   top: 0px;
   right: -20px;
-  height: 250px;
+  height: 290px;
   width: 267px;
   background-color: white;
   border: none;
@@ -17,15 +20,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 230px;
+  height: 250px;
   width: 250px;
+  padding-top: 15px;
   z-index: 2;
   overflow: hidden;
   position: relative;
 }
 
 .image {
-  min-height: 135px;
+  min-height: 150px;
   width: 215px;
   border-radius: 3%;
   z-index: 2;
@@ -42,12 +46,18 @@
   margin-top: 10px;
   z-index: 2;
   font-family: "Roboto";
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 
 .content__header {
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
+}
+
+.content__date {
+  font-style: italic;
+  font-size: 0.8rem;
 }
 
 .content__title {
@@ -57,14 +67,8 @@
 }
 
 .content__description {
-  line-height: 1.4;
-}
-
-.more {
-  margin-top: 10px;
-  border: none;
-  color: #ffb44f;
-  background-color: white !important;
-  z-index: 3;
-  cursor: pointer;
+  margin-top: 3.5px;
+  margin-left: 1.5px;
+  line-height: 1.33;
+  font-size: 0.8rem;
 }

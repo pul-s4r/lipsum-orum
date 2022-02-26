@@ -17,8 +17,8 @@ const months = [
 ];
 
 const TimelineEventCard = (props) => {
-  let shortDescription = props.description.slice(0, 60);
-  if (shortDescription.length === 60) shortDescription += "...";
+  let shortDescription = props.description.slice(0, 100);
+  if (shortDescription.length === 100) shortDescription += "...";
 
   let date =
     props.date.getDay() +
@@ -26,12 +26,16 @@ const TimelineEventCard = (props) => {
     months[props.date.getMonth()] +
     " " +
     props.date.getFullYear();
-  console.log(date, props.date);
+
+  const cardClickHandler = () => {
+    props.onClick(props.id);
+  };
+
   return (
-    <React.Fragment>
+    <div className={classes["card-container"]} onClick={cardClickHandler}>
       <div className={classes.overlay}></div>
       <div className={classes.card}>
-        <img className={classes.image} src={props.imgUrl} alt="event" />
+        <img className={classes.image} src={props.imgSrc} alt="event" />
         <div className={classes.content}>
           <div className={classes["content__header"]}>
             <div className={classes["content__title"]}>{props.title}</div>
@@ -41,11 +45,8 @@ const TimelineEventCard = (props) => {
             {shortDescription}
           </div>
         </div>
-        <button type="button" className={classes.more}>
-          View more
-        </button>
       </div>
-    </React.Fragment>
+    </div>
   );
 };
 

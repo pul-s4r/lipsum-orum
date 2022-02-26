@@ -1,0 +1,32 @@
+.footer {
+  position: fixed;
+  bottom: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  width: 100vw;
+  background-color: #4a71ff;
+}
+
+.control-panel {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 45px;
+  width: 500px;
+  background-color: #1dabfd;
+  border-radius: 50px;
+}
+
+.control-panel__icon {
+  font-size: 1.35rem;
+  color: #0062bd;
+  cursor: pointer;
+}
+
+.logo {
+  height: 50px;
+  width: 50px;
+  color: white;
+}
