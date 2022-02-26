@@ -21,11 +21,7 @@ input[type="password"] {
   box-sizing: border-box;
   padding: 1rem;
 }
-<<<<<<< HEAD
-label {
-=======
 .parent_container label {
->>>>>>> 512bd9454f6a43b02490f8fd0242085495a1e30d
   color: black;
 }
 

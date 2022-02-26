@@ -1,20 +1,19 @@
-import classes from "./LargeEventModal.module.css";
+import classes from "./ViewMemoryModal.module.css";
 
 import Comment from "../Comment/Comment";
 import Modal from "../../UI/Modal";
 import AddComment from "../AddComment/AddComment";
-import Tags from "../Tags/Tags";
 import Tag from "../Tag/Tag";
 
-function LargeEventModal(props) {
-  const comments = props.event.comments.map((comment) => {
+function ViewMemoryModal(props) {
+  const comments = props.memory.comments.map((comment) => {
     return <Comment key={comment.id} {...comment} />;
   });
 
-  const tags = props.event.tags.map((item) => <Tag item={item} />);
+  const tags = props.memory.tags.map((item) => <Tag item={item} />);
 
   return (
-    <Modal>
+    <Modal onClose={props.onClose}>
       <div className={classes.modal}>
         <div className={classes.main}>
           <img
@@ -24,19 +23,21 @@ function LargeEventModal(props) {
           />
           <div className={classes["header-info"]}>
             <div className={`${classes["name"]} ${classes.highlight}`}>
-              {props.event.eventName}
+              {props.memory.eventName}
             </div>
-            <div className={classes["event-date"]}>{props.event.eventDate}</div>
+            <div className={classes["event-date"]}>
+              {props.memory.eventDate}
+            </div>
             <div className={classes["post-information"]}>
               <div className={`${classes["author"]} ${classes.highlight}`}>
-                by {props.event.author}
+                by {props.memory.author}
               </div>
               <div className={classes["post-date"]}>
-                {props.event.createDate}
+                {props.memory.createDate}
               </div>
             </div>
             <div className={classes["description"]}>
-              {props.event.description}
+              {props.memory.description}
             </div>
           </div>
         </div>
@@ -66,4 +67,4 @@ function LargeEventModal(props) {
     </Modal>
   );
 }
-export default LargeEventModal;
+export default ViewMemoryModal;
