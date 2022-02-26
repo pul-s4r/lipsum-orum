@@ -1,20 +1,7 @@
 import React from "react";
 import classes from "./TimelineEventCard.module.css";
 
-const months = [
-  "Jan",
-  "Feb",
-  "Mar",
-  "Apr",
-  "May",
-  "Jun",
-  "Jul",
-  "Aug",
-  "Sep",
-  "Oct",
-  "Nov",
-  "Dec",
-];
+import * as config from "../../config";
 
 const TimelineEventCard = (props) => {
   let shortDescription = props.description.slice(0, 100);
@@ -23,7 +10,7 @@ const TimelineEventCard = (props) => {
   let date =
     props.date.getDay() +
     " " +
-    months[props.date.getMonth()] +
+    config.MONTHS[props.date.getMonth()] +
     " " +
     props.date.getFullYear();
 
