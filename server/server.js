@@ -4,9 +4,11 @@ import { MongoClient, ServerApiVersion } from 'mongodb';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import dotenvExpand from 'dotenv-expand';
+import config from './config/serverconf.js';
+
 import userRoutes from './routes/user.js';
 import contentEntryRoutes from './routes/contentEntry.js';
-import config from './config/serverconf.js';
+import timelineRoutes from './routes/timeline.js';
 
 const envs = dotenv.config();
 dotenvExpand.expand(envs);
@@ -27,7 +29,7 @@ async function testroute (fastify, options) {
 //
 // });
 
-var routeList = [userRoutes, contentEntryRoutes];
+var routeList = [userRoutes, contentEntryRoutes, timelineRoutes];
 for(let idx in routeList) {
   routeList[idx].forEach((route, idx) => {
     fastify.route(route);

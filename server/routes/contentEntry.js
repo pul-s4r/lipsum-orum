@@ -8,8 +8,8 @@ const contentEntryRoutes = [
   },
   {
     method: 'GET',
-    url: '/content/entry/byUser/:userId',
-    handler: ContentEntryController.getEntryByUserId,
+    url: '/content/entry/byUser/:timelineId',
+    handler: ContentEntryController.getEntryByTimelineId,
   },
   {
     method: 'GET',

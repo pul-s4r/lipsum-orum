@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 import UserModel from '../models/user.js';
-import ContentEntryModel from '../models/contentEntry.js';
+import {ContentEntryModel} from '../models/contentEntry.js';
 
 const ObjectId = mongoose.Types.ObjectId;
 
@@ -19,11 +19,11 @@ const ContentEntryController = {
       return new Error(error);
     }
   },
-  getEntryByUserId: async (req) => {
+  getEntryByTimelineId: async (req) => {
     try {
-      var userId = req.params === undefined ? req.id : req.params.userId;
-      if (mongoose.isValidObjectId(userId)) {
-        const result = await ContentEntryModel.find({ userId: userId });
+      var timelineId = req.params === undefined ? req.id : req.params.timelineId;
+      if (mongoose.isValidObjectId(timelineId)) {
+        const result = await ContentEntryModel.find({ timelineId: timelineId });
         return result;
       } else {
         return {statusCode: 400, error: 'Bad Request', message: 'Invalid object ID'};
@@ -43,9 +43,9 @@ const ContentEntryController = {
     try {
       const body = {... req.body};
       const newEntry = new ContentEntryModel(body);
-      const userExists = UserModel.findOne({ id: body.userId });
+      const userExists = UserModel.findOne({ id: body.timelineId });
 
-      if (mongoose.isValidObjectId(body.userId) && userExists) {
+      if (mongoose.isValidObjectId(body.timelineId) && userExists) {
         return await newEntry.save();
       } else {
         return {statusCode: 400, error: 'Bad Request', message: 'User not in database or ObjectId is invalid'};
