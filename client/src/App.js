@@ -12,8 +12,7 @@ function App() {
       eventDate: "1 Jan 1992",
       author: "Christine Powell",
       createDate: "1 Jan, 2022",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nec, euismod iaculis elit morbi fermentum placerat sed iaculis tempus. Ultricies ornare in viverra auctor leo turpis enim, leo at. Nunc ultrices dictum integer sed.",
+      description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nec, euismod iaculis elit morbi fermentum placerat sed iaculis tempus. Ultricies ornare in viverra auctor leo turpis enim, leo at. Nunc ultrices dictum integer sed.",
       comments: [
         {
           id: 1,
@@ -28,13 +27,7 @@ function App() {
           profileUrl:
             "https://images.unsplash.com/photo-1504257432389-52343af06ae3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzE2fHxwZW9wbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
           description: "Wonderful night, I ate so much cake xD",
-        },
-        {
-          id: 3,
-          sender: "Marie Powell",
-          profileUrl: "",
-          description: "Such a fun night!! We should do it again!",
-        },
+        }
       ],
       tags: ["Birthday", "Party", "Ken", "2022"],
     },
@@ -47,26 +40,3 @@ function App() {
 }
 
 export default App;
-
-// import "./App.css";
-// // import LoginForm from "./components/loginForm/LoginForm";
-// // import TimelineEvent from "./components/TimelineEvent/TimelineEvent";
-// import { Chrono } from "react-chrono";
-// import LargeEventModal from "./components/LargeEventModal/LargeEventModal";
-// function App() {
-//   const onClick = () => {
-//     console.log('click')
-// }
-
-//   return (
-//     <div className="App">
-//       {/* <LoginForm /> */}
-//       <p>hello</p>
-//       <LargeEventModal></LargeEventModal>
-//       {/* <div><TimelineEvent></TimelineEvent></div> */}
-//       {/* <Chrono /> */}
-//     </div>
-//   );
-// }
-
-// export default App;

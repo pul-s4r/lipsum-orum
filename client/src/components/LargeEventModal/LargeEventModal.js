@@ -1,5 +1,6 @@
 import "./LargeEventModal.css";
 import Comment from "../Comment/Comment";
+import AddComment from "../AddComment/AddComment";
 import Tags from "../Tags/Tags";
 
 function LargeEventModal(props) {
@@ -26,6 +27,7 @@ function LargeEventModal(props) {
         <div className="column left">
           <h3 className="subheading">Comments</h3>
           {comments}
+          <AddComment></AddComment>
         </div>
         <div className="column right">
           <h3 className="subheading">Tags</h3>
