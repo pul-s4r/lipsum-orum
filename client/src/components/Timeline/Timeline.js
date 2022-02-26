@@ -7,8 +7,10 @@ import TimelineHeader from "./TimelineHeader";
 import TimelineEventCard from "./TimelineEventCard";
 import TimelineFooter from "./TimelineFooter";
 import Modal from "../UI/Modal";
+import { useState } from "react";
 
 const Timeline = (props) => {
+  const [isModalOpen, setIsModalOpen] = useState(true);
   const cardClickaHandler = (eventId) => {
     console.log(eventId);
   };
@@ -23,11 +25,17 @@ const Timeline = (props) => {
     );
   });
 
+  const modalCloseHandler = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div className={classes.timeline}>
-      <Modal>
-        <div>Anything put here inside modal</div>
-      </Modal>
+      {isModalOpen && (
+        <Modal onClose={modalCloseHandler}>
+          <div>Anything put here inside modal</div>
+        </Modal>
+      )}
       <TimelineHeader />
       <Chrono {...config.CHRONO_TIMELINE_SETTINGS}>{events}</Chrono>
       <TimelineFooter />

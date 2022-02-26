@@ -1,16 +1,27 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 import classes from "./Modal.module.css";
 
 const Backdrop = (props) => {
-  return <div className={classes.backdrop} onClick={props.onClose}></div>;
+  return <div className={classes.backdrop}></div>;
 };
 
 const ModalOverlay = (props) => {
   return (
     <div className={classes.modal}>
-      <div className={classes.content}>{props.children}</div>
+      <div className={classes.content}>
+        <div className={classes["close-box-container"]}>
+          <FontAwesomeIcon
+            className={classes["close-box"]}
+            icon={faXmark}
+            onClick={props.onClose}
+          />
+        </div>
+        {props.children}
+      </div>
     </div>
   );
 };
@@ -23,7 +34,7 @@ const Modal = (props) => {
         document.getElementById("backdrop-root")
       )}
       {ReactDOM.createPortal(
-        <ModalOverlay>{props.children}</ModalOverlay>,
+        <ModalOverlay onClose={props.onClose}>{props.children}</ModalOverlay>,
         document.getElementById("overlay-root")
       )}
     </React.Fragment>

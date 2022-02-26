@@ -38,3 +38,16 @@
     transform: translateY(0);
   }
 }
+
+.close-box-container {
+  display: flex;
+  /* background-color: red; */
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.close-box {
+  margin-right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
