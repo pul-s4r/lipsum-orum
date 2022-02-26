@@ -1,6 +1,6 @@
 import Fastify from 'fastify';
 import fastifyCors from 'fastify-cors';
-import { MongoClient } from 'mongodb';
+import { MongoClient, ServerApiVersion } from 'mongodb';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import dotenvExpand from 'dotenv-expand';
@@ -12,7 +12,7 @@ dotenvExpand.expand(envs);
 const CONNECTION_URL = process.env.CONNECTION_URL;
 
 const fastify = Fastify({logger: true});
-const client = new MongoClient(process.env.CONNECTION_URL);
+const client = new MongoClient(process.env.CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 // console.log(CONNECTION_URL);
 
 async function testroute (fastify, options) {
@@ -28,7 +28,6 @@ async function testroute (fastify, options) {
 
 var routeList = [userRoutes];
 for(let idx in routeList) {
-  console.log("routes: ", routeList[idx]);
   routeList[idx].forEach((route, idx) => {
     fastify.route(route);
   });
@@ -39,7 +38,12 @@ fastify.register(testroute);
 const start = async () => {
   try {
     await fastify.listen(config.port, config.url);
-    await client.connect();
+    /* await client.connect((err) => {
+      const collection = client.db("test").collection("devices");
+      // console.log("Connected with result: ", collection);
+    }); */
+    mongoose.connect(process.env.CONNECTION_URL)
+      .then(() => console.log("MongoDB Connected ...")); 
   } catch (error) {
     fastify.log.error(error);
     process.exit(1);
