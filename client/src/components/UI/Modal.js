@@ -13,13 +13,13 @@ const ModalOverlay = (props) => {
   return (
     <div className={classes.modal}>
       <div className={classes.content}>
-        {/* <div className={classes["close-box-container"]}>
+        <div className={classes["close-box-container"]}>
           <FontAwesomeIcon
             className={classes["close-box"]}
             icon={faXmark}
             onClick={props.onClose}
           />
-        </div> */}
+        </div>
         {props.children}
       </div>
     </div>

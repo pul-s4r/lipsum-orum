@@ -1,44 +1,66 @@
-import "./LargeEventModal.css";
+import classes from "./LargeEventModal.module.css";
+
 import Comment from "../Comment/Comment";
 import Modal from "../../UI/Modal";
 import AddComment from "../AddComment/AddComment";
 import Tags from "../Tags/Tags";
+import Tag from "../Tag/Tag";
 
 function LargeEventModal(props) {
   const comments = props.event.comments.map((comment) => {
     return <Comment key={comment.id} {...comment} />;
   });
 
+  const tags = props.event.tags.map((item) => <Tag item={item} />);
+
   return (
-    // <div>
-    // <Modal>
-    //   <p>test</p>
-    // </Modal>
-    // </div>
     <Modal>
-      <div className="header">
-        {/* <img
-          className="photo"
-          src="https://images.unsplash.com/photo-1533294160622-d5fece3e080d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
-        /> */}
-        <div className="photo"></div>
-        <div className="header-info">
-          <p className="name">{props.event.eventName}</p>
-          <p className="date">{props.event.eventDate}</p>
-          <p className="subheading author">{props.event.author}</p>
-          <p className="body createDate">{props.event.createDate}</p>
-          <p className="body">{props.event.description}</p>
+      <div className={classes.modal}>
+        <div className={classes.main}>
+          <img
+            className={classes["photo"]}
+            src="https://images.unsplash.com/photo-1533294160622-d5fece3e080d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+            alt="event"
+          />
+          <div className={classes["header-info"]}>
+            <div className={`${classes["name"]} ${classes.highlight}`}>
+              {props.event.eventName}
+            </div>
+            <div className={classes["event-date"]}>{props.event.eventDate}</div>
+            <div className={classes["post-information"]}>
+              <div className={`${classes["author"]} ${classes.highlight}`}>
+                by {props.event.author}
+              </div>
+              <div className={classes["post-date"]}>
+                {props.event.createDate}
+              </div>
+            </div>
+            <div className={classes["description"]}>
+              {props.event.description}
+            </div>
+          </div>
         </div>
-      </div>
-      <div className="row">
-        <div className="column left">
-          <h3 className="subheading">Comments</h3>
-          {comments}
-          <AddComment></AddComment>
-        </div>
-        <div className="column right">
-          <h3 className="subheading">Tags</h3>
-          <Tags tags={props.event.tags}></Tags>
+
+        <div className={classes.details}>
+          <div className={classes["details__comments"]}>
+            <div
+              className={`${classes["details__comments__title"]} 
+                ${classes.highlight}`}
+            >
+              Comments
+            </div>
+            {comments}
+            <AddComment></AddComment>
+          </div>
+          <div className={classes["details__tags"]}>
+            <div
+              className={`${classes["details__tags__title"]} 
+              ${classes.highlight}`}
+            >
+              Tags
+            </div>
+            {tags}
+          </div>
         </div>
       </div>
     </Modal>

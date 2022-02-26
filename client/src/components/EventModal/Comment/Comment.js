@@ -1,17 +1,19 @@
-import Card from "react-bootstrap/Card";
-import "./Comment.css";
+import classes from "./Comment.module.css";
 
 function Comment({ profileUrl, sender, description }) {
   return (
-    <div className="tribContent">
-      <Card style={{ width: "18rem" }}>
-        <img className="profilePic" src={profileUrl} alt="profile"></img>
-        <Card.Body className="commentContent">
-          <Card.Title className="sender">{sender}</Card.Title>
-          <Card.Text className="body">{description}</Card.Text>
-        </Card.Body>
-      </Card>
+    <div className={classes.comment}>
+      <img
+        className={classes["profile-picture"]}
+        src={profileUrl}
+        alt="profile"
+      />
+      <div className={classes["comment-info"]}>
+        <div className={classes.sender}>{sender}</div>
+        <div className={classes.description}>{description}</div>
+      </div>
     </div>
   );
 }
+
 export default Comment;
