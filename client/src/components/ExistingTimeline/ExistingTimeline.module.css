@@ -15,10 +15,10 @@ input[type="code"] {
   display: flex;
 }
 
-button {
+.code button {
   padding: 6px 20px;
   margin: 8px 0;
-  background-color: #ffb44f;
+  background-color: var(--secondary-light);
   border: none;
   cursor: pointer;
   color: #ffffff;

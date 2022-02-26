@@ -1,9 +1,10 @@
 import { React, useState } from "react";
+import { Link } from "react-router-dom";
 import ExistingTimeline from "../ExistingTimeline/ExistingTimeline";
 import styles from "./RegistrationForm.module.css";
-import MemoryLogo from "../../assets/ML-logo-hor.svg";
+import Smiley from "../../assets/new-user-carousel_1.png";
 
-const LoginForm = () => {
+const RegistrationForm = () => {
   const [existingMemory, setExistingMemory] = useState(false);
 
   const checkHandler = () => {
@@ -19,8 +20,7 @@ const LoginForm = () => {
   return (
     <div className={styles.registration_page}>
       <div className={styles.container}>
-        <img id="logo" src={MemoryLogo} alt="Memory logo" />
-        <div className={styles.test}>
+        <div className={styles.registration}>
           <form>
             <h1>Create account</h1>
             <label for="firstName">
@@ -65,7 +65,7 @@ const LoginForm = () => {
 
             <input type="submit" value="Sign Up" />
             <p>
-              Already have an account? <a href="url">Log in here</a>
+              Already have an account? <Link to="login">Log in Here</Link>
             </p>
           </form>
         </div>
@@ -76,15 +76,12 @@ const LoginForm = () => {
       </div>
       <div className={styles.info}>
         <h1>Start creating memories</h1>
+        <img src={Smiley} alt="Smiley face, bear and portrait" />
         <div className="box"></div>
-        <h2>Lorem ipsum.</h2>
-        <p>
-          Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem
-          ipsumLorem ipsumLorem ipsumLorem ipsum
-        </p>
+        <p>Description of app</p>
       </div>
     </div>
   );
 };
 
-export default LoginForm;
+export default RegistrationForm;

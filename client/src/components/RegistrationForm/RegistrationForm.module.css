@@ -1,18 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Lexend&display=swap");
 
-img {
-  width: 10%;
-  position: absolute;
-  top: 5%;
-  bottom: 0;
-  left: 5%;
-}
-
 .check {
   margin-top: 60px;
 }
 
-input[type="text"],
+.registration input[type="text"],
 input[type="email"],
 input[type="password"] {
   width: 100%;
@@ -67,13 +59,13 @@ input[type="submit"] {
   justify-content: center;
 }
 
-form {
+.registration form {
   justify-content: center;
   align-items: center;
   width: 45%;
   height: 50%;
 }
-form p {
+.registration form p {
   text-align: center;
 }
 
@@ -90,6 +82,7 @@ form p {
   align-items: center;
   width: 50%;
   background-color: #4a71ff;
+  color: #ffffff;
 }
 
 form h1 {
@@ -106,7 +99,7 @@ form h1 {
   background-color: black;
 }
 
-.test {
+.registration {
   width: 100%;
   justify-content: center;
   display: flex;
