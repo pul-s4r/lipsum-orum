@@ -117,7 +117,9 @@ const TimelineController = {
       const existing = await TimelineModel.findOne({ id: id });
 
       if (mongoose.isValidObjectId(id) && existing) {
-        const entry = { ... pinfo.entry, attachments: req.file !== undefined ? [req.file.filename] : [], timelineId: id };
+        const eventDate = new Date(pinfo.entry.eventDate);
+
+        const entry = { ... pinfo.entry, eventDate:  eventDate, attachments: req.file !== undefined ? [req.file.filename] : [], timelineId: id };
         const entryModel = new ContentEntryModel(entry);
         await entryModel.save();
         return await TimelineModel.updateOne(

@@ -6,6 +6,7 @@ const contentEntry = Schema({
   timelineId: {type: ObjectId, required: true},
   title: {type: String, required: true},
   description: {type: String, required: false},
+  eventDate: {type: Date, default: new Date()}, 
   attachments: {type: [String], required: false},
 });
 
