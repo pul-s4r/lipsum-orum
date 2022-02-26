@@ -29,10 +29,9 @@ const UserController = {
   addUser: async (req, res) => {
     try {
       const body = {... req.body, _id: new ObjectId()};
-      console.log("Body: " , body)
       const newUser = new UserModel(body);
-      const existing = await UserModel.findOne({ username: body.username });
-
+      const existing = await UserModel.findOne({ email: body.email }).exec();
+      console.log(existing);
       if (existing) {
         return {statusCode: 400, error: 'Bad Request', message: 'User already exists'};
       } else {
