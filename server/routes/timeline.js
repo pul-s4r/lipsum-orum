@@ -1,4 +1,5 @@
 import TimelineController from '../controller/timelineController.js';
+import multer from '../middleware/upload.js';
 
 const timelineRoutes = [
   {
@@ -33,7 +34,14 @@ const timelineRoutes = [
   },
   {
     method: 'PUT',
+    url: '/content/timeline/setimage',
+    preHandler: multer.single('file'),
+    handler: TimelineController.addImgToTimeline,
+  },
+  {
+    method: 'PUT',
     url: '/content/timeline/entry/add',
+    preHandler: multer.single('file'),
     handler: TimelineController.addEntry,
   },
   {
@@ -48,8 +56,13 @@ const timelineRoutes = [
   },
   {
     method: 'GET',
-    url: '/content/timeline/entry/view/:id/:eid',
+    url: '/content/timeline/entry/view',
     handler: TimelineController.viewEntry,
+  },
+  {
+    method: 'GET',
+    url: '/content/timeline/entry/view/image/:filename',
+    handler: TimelineController.viewImage,
   },
 ];
 

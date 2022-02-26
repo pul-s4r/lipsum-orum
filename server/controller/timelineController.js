@@ -1,10 +1,24 @@
 import mongoose from 'mongoose';
+import Grid from 'gridfs-stream';
+import fs from 'fs';
 
 import UserModel from '../models/user.js';
 import {ContentEntryModel} from '../models/contentEntry.js';
 import TimelineModel from '../models/timeline.js';
 
 const ObjectId = mongoose.Types.ObjectId;
+
+
+var gfsBucket;
+var gfs;
+const conn = mongoose.connection;
+conn.once("open", () => {
+  gfsBucket = new mongoose.mongo.GridFSBucket(conn.db, {
+   bucketName: 'photos'
+  });
+  gfs = Grid(conn.db, mongoose.mongo);
+  gfs.collection('photos');
+});
 
 const TimelineController = {
   getTimelineById: async (req) => {
@@ -85,14 +99,25 @@ const TimelineController = {
       return new Error(error);
     }
   },
+  addImgToTimeline: async (req) => {
+    try {
+      const id = req.id;
+      console.log("ID: ", id);
+      return await TimelineModel.updateOne(
+        {id: id}, {image: req.file.filename}
+      );
+    } catch (error) {
+      return new Error(error);
+    }
+  },
   addEntry: async (req) => {
     try {
-      const id = req.body === undefined ? req.id : req.body.id;
+      const pinfo = JSON.parse(req.body.postInfo);
+      const id = pinfo === undefined ? req.id : pinfo.id;
       const existing = await TimelineModel.findOne({ id: id });
-      console.log("EXISTING: ", existing);
 
       if (mongoose.isValidObjectId(id) && existing) {
-        const entry = { ... req.body.entry, timelineId: id };
+        const entry = { ... pinfo.entry, attachments: req.file !== undefined ? [req.file.filename] : [], timelineId: id };
         const entryModel = new ContentEntryModel(entry);
         await entryModel.save();
         return await TimelineModel.updateOne(
@@ -176,7 +201,32 @@ const TimelineController = {
     } catch (error) {
       return new Error(error);
     }
-  }
+  },
+  viewImage: async (req, res) => {
+    try {
+      const file = await gfs.files.findOne({ filename: req.params.filename });
+      var buffer = Buffer.alloc(file.chunkSize);
+
+      // console.log("FILE: ", file);
+      const readStream = gfsBucket.openDownloadStream(file._id);
+      // console.log("RS: ", readStream);
+      const writeStream = fs.createWriteStream('tempimg');
+
+      await readStream.pipe(writeStream)
+        .on('finish', () => {
+          var result = fs.readFileSync('tempimg');
+          res.type(file.contentType);
+          res.send(result);
+        })
+        .on('error', (error) => {
+          return new Error(error);
+        });
+      // return {};
+    } catch (error) {
+      return new Error(error);
+    }
+  },
+
 };
 
 export default TimelineController;

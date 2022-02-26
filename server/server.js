@@ -3,6 +3,8 @@ import fastifyCors from 'fastify-cors';
 import { MongoClient, ServerApiVersion } from 'mongodb';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+import cors from 'fastify-cors';
+import multipart from 'fastify-multipart';
 import dotenvExpand from 'dotenv-expand';
 import config from './config/serverconf.js';
 
@@ -25,9 +27,8 @@ async function testroute (fastify, options) {
 };
 
 // fastify.register(require('fastify-swagger'), swagger.options);
-// fastify.register(fastifyCors, () => {
-//
-// });
+fastify.register(cors, { origin: `${config.url}${config.port}` });
+fastify.register(multipart); 
 
 var routeList = [userRoutes, contentEntryRoutes, timelineRoutes];
 for(let idx in routeList) {
