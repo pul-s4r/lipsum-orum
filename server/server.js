@@ -5,6 +5,7 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import dotenvExpand from 'dotenv-expand';
 import userRoutes from './routes/user.js';
+import contentEntryRoutes from './routes/contentEntry.js';
 import config from './config/serverconf.js';
 
 const envs = dotenv.config();
@@ -26,7 +27,7 @@ async function testroute (fastify, options) {
 //
 // });
 
-var routeList = [userRoutes];
+var routeList = [userRoutes, contentEntryRoutes];
 for(let idx in routeList) {
   routeList[idx].forEach((route, idx) => {
     fastify.route(route);
@@ -43,7 +44,7 @@ const start = async () => {
       // console.log("Connected with result: ", collection);
     }); */
     mongoose.connect(process.env.CONNECTION_URL)
-      .then(() => console.log("MongoDB Connected ...")); 
+      .then(() => console.log("MongoDB Connected ..."));
   } catch (error) {
     fastify.log.error(error);
     process.exit(1);
