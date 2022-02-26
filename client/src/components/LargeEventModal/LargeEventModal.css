@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Noto+Sans+Display&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@600&family=Roboto&display=swap');
+
+
+.name, .author, .subheading{
+    color: #4A71FF;
+}
+
+.subheading {
+    font-family:"Lexend", sans-serif;
+    font-size: 14px;
+}
+
+.body {
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+}
+
+.name {
+    font-size: 26px;
+    font-family:"Lexend", sans-serif;
+    margin:0px;
+    padding:0px;
+    /* background-color: red; */
+}
+.date{
+    font-family:"Roboto", sans-serif;
+    font-size: 20px;
+    margin: 10px 0px;
+    
+}
+.author{
+    display: inline;
+}
+
+.createDate{
+    display: inline;
+    margin-left: 50px;
+}
+
+.content{
+    width:582px;
+    height: 693px;
+    padding:2rem 1rem 1rem;
+    /* background-color: red; */
+    background-color:#F8F8F8;
+    border-radius:2.5%;
+}
+
+.photo{
+    width:260px;
+    height:260px;
+    object-fit:cover;
+    border-radius:5%;
+    float: left;
+  }
+
+  .header-info{
+      margin-left:12rem;
+  }
+
+  .header{
+    display:inline-block;
+    width:100%;
+}
+
+
+/* Create two unequal columns that floats next to each other */
+.column {
+    float: left;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+  }
+  
+  .left {
+    width: 73%;
+
+  }
+  
+  .right {
+    width: 27%;
+
+  }
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }

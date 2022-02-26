@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@600&family=Roboto&display=swap');
+
+.tribContent {
+    width:100%;
+    display:inline-block;
+    padding:10px;
+    margin:5px 0px;
+   background-color: #FFFF ;
+
+   box-shadow: 5px 5px 10px #c4c4c4;
+   border-radius: 10px;
+}
+.sender {
+    font-family:"Lexend", sans-serif;
+    font-size: 14px;
+    color: #4A71FF;
+}
+.body {
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+}
+.profilePic{
+    width:55px;
+    height:55px;
+    object-fit:cover;
+    border-radius:50%;
+    float: left;
+  }
+
+.commentContent{
+    margin-left: 70px;
+}
