@@ -3,7 +3,7 @@
   flex-direction: column;
   height: 100%;
   width: auto;
-  background-color: #4a71ff;
+  background-image: linear-gradient(#4a71ff, #1dabfd);
 }
 
 .card {
