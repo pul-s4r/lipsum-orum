@@ -10,7 +10,7 @@ import { useState } from "react";
 import InviteMemberModal from "./InviteMemberModal/InviteMemberModal";
 
 const Timeline = (props) => {
-  const [isInviteMemberModalOpen, setIsInviteMemberModalOpen] = useState(true);
+  const [isInviteMemberModalOpen, setIsInviteMemberModalOpen] = useState(false);
   const cardClickaHandler = (eventId) => {
     console.log(eventId);
   };

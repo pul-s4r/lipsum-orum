@@ -1,6 +1,9 @@
 import Modal from "../../UI/Modal";
 import classes from "./InviteMemberModal.module.css";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGear } from "@fortawesome/free-solid-svg-icons";
+
 const InviteMemberModal = (props) => {
   return (
     <Modal onClose={props.onClose}>
@@ -11,6 +14,7 @@ const InviteMemberModal = (props) => {
             Your friends(10)
           </div>
           <div className={classes["member-container__content"]}>
+            {/* Member Component */}
             <div className={classes["member"]}>
               <img
                 className={classes["member-profile"]}
@@ -22,6 +26,12 @@ const InviteMemberModal = (props) => {
                 <div className={classes["member-email"]}>
                   MariePowell@email.com
                 </div>
+              </div>
+              <div className={classes["member-settings-container"]}>
+                <FontAwesomeIcon
+                  className={classes["member-settings"]}
+                  icon={faGear}
+                />
               </div>
             </div>
           </div>
