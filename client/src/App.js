@@ -1,7 +1,16 @@
+<<<<<<< HEAD
 // import FullPageProfile from './components/FullPageProfile'
 import LargeEventModal from "./components/EventModal/LargeEventModal/LargeEventModal";
 // import logo from './logo.svg';
 //import './App.css';
+=======
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./App.css";
+import RegistrationForm from "./components/RegistrationForm/RegistrationForm.js";
+import LoginForm from "./components/LoginForm/LoginForm.js";
+import Timeline from "./components/Timeline/Timeline";
+import AddMemoryModal from "./components/AddMemoryModal/AddMemoryModal";
+>>>>>>> 512bd9454f6a43b02490f8fd0242085495a1e30d
 
 function App() {
   const events = [
@@ -33,9 +42,19 @@ function App() {
     },
   ];
   return (
+<<<<<<< HEAD
     <div className="App">
       <LargeEventModal event={events[0]}></LargeEventModal>
     </div>
+=======
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<RegistrationForm />} />
+        <Route path="/login" element={<LoginForm />} />
+        <Route path="/timeline" element={<Timeline />} />
+      </Routes>
+    </BrowserRouter>
+>>>>>>> 512bd9454f6a43b02490f8fd0242085495a1e30d
   );
 }
 

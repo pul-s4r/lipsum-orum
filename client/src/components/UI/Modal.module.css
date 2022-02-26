@@ -22,7 +22,7 @@
 .content {
   width: 582px;
   height: 693px;
-  padding: 1.5rem 2rem 1rem;
+  padding: 2rem 1rem 1rem;
   background-color: #f8f8f8;
   border-radius: 2.5%;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
@@ -41,11 +41,13 @@
 
 .close-box-container {
   display: flex;
+  /* background-color: red; */
   width: 100%;
   justify-content: flex-end;
 }
 
 .close-box {
+  margin-right: 15px;
   font-size: 1.5rem;
   cursor: pointer;
 }

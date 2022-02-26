@@ -1,0 +1,106 @@
+.background {
+  height: 1000px;
+  width: 1000px;
+  background-color: black;
+}
+small {
+  font-size: 10px;
+}
+
+.content h2 {
+  margin: 0;
+}
+
+.content {
+  padding: 2rem 1rem 1rem;
+  color: var(--primary-main);
+  background-color: #f8f8f8;
+  border-radius: 2.5%;
+  display: flex;
+  flex-direction: column;
+}
+.content input {
+  background-color: #f2f7fb;
+  border-radius: 3px;
+  border: none;
+  border: 0.5px solid #dbdbdb;
+  height: 39px;
+}
+
+.content input[id="image"] {
+  background-color: #f2f7fb;
+  border-radius: 3px;
+  border: none;
+  border: 0.5px solid #dbdbdb;
+  height: 100px;
+}
+
+.content textarea {
+  height: 100px;
+}
+
+#description_input {
+  display: none;
+}
+
+.content h4 {
+  margin: 10px 0px;
+}
+
+.first_row {
+  display: flex;
+}
+
+.second_row {
+  display: flex;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  margin-left: 13.5px;
+}
+
+.column_2 {
+  align-self: right;
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin: auto;
+}
+
+.column_1 {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: auto;
+}
+
+.inner_row_1 {
+  display: flex;
+  flex-direction: column;
+  height: 43px;
+}
+
+.inner_row_1 label {
+  line-height: 0;
+  margin: 20px auto 10px 2px;
+}
+
+.buttons {
+  margin-top: 50px;
+  margin-bottom: auto;
+  display: flex;
+  justify-content: space-around;
+}
+.buttons button {
+  width: 130px;
+  height: 50px;
+  border: none;
+  color: #ffffff;
+  background-color: var(--primary-main);
+  font-family: inherit;
+}
+
+.smallText {
+  color: #dbdbdb;
+}

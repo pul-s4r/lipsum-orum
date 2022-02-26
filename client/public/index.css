@@ -1,8 +1,18 @@
+* {
+  box-sizing: border-box;
+}
+
 html,
 body,
 #root {
   height: 100%;
-  font-family: "Lato", sans-serif;
+  font-family: "Lexend", sans-serif;
+}
+* {
+  box-sizing: border-box;
+  --primary-main: #4a71ff;
+  --secondary-light: #ffb44f;
+  --primary-text: #000000;
 }
 
 * {
