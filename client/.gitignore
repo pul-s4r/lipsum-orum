@@ -21,3 +21,10 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# not needed
+client/yarn.lock
+node_modules/
+package-lock.json
+package.json
+yarn.lock

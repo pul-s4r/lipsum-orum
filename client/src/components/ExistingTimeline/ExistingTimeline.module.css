@@ -1,0 +1,32 @@
+input[type="code"] {
+  width: 100%;
+  padding: 12px 1px;
+  margin: 8px 0;
+  display: inline;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  box-sizing: border-box;
+  padding: 1rem;
+}
+
+.test1 {
+  width: 100%;
+  flex-direction: row;
+  display: flex;
+}
+
+.code button {
+  padding: 6px 20px;
+  margin: 8px 0;
+  background-color: var(--secondary-light);
+  border: none;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 14px;
+  width: 10rem;
+}
+
+.check {
+  text-align: center;
+  margin-top: 20px;
+}

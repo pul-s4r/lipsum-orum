@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend&display=swap");
+
+.parent_container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.check {
+  margin-top: 60px;
+}
+
+.registration input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: block;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  box-sizing: border-box;
+  padding: 1rem;
+}
+label {
+  color: black;
+}
+
+.fullName {
+  display: flex;
+  justify-content: space-between;
+}
+
+.fullName input {
+  width: 48%;
+}
+
+.fullName label {
+  display: block;
+}
+
+input:focus {
+  outline: none !important;
+}
+
+input[type="submit"] {
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  margin-top: 50px;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: white;
+  padding: 20px;
+  width: 50%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.registration form {
+  justify-content: center;
+  align-items: center;
+  width: 45%;
+  height: 50%;
+}
+.registration form p {
+  text-align: center;
+}
+
+.registration_page {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  background-color: #4a71ff;
+  color: #ffffff;
+}
+
+form h1 {
+  font-size: 1.5rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.box {
+  width: 200px;
+  height: 100px;
+  background-color: black;
+}
+
+.registration {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+}

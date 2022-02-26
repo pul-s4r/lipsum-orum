@@ -1,5 +1,5 @@
 // import FullPageProfile from './components/FullPageProfile'
-import LargeEventModal from "./components/LargeEventModal/LargeEventModal";
+import LargeEventModal from "./components/EventModal/LargeEventModal/LargeEventModal";
 // import logo from './logo.svg';
 //import './App.css';
 
