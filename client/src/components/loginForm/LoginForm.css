@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Noto+Sans+Display&display=swap");
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: block;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  box-sizing: border-box;
+  padding: 1rem;
+}
+label {
+  color: rgb(141, 141, 141);
+  font-family: "Lato", sans-serif;
+}
+
+.fullName {
+  display: flex;
+  justify-content: space-between;
+}
+
+.fullName input {
+  width: 48%;
+}
+
+.fullName label {
+  display: block;
+}
+
+input:focus {
+  outline: none !important;
+}
+
+input[type="submit"] {
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  margin-top: 50px;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: white;
+  padding: 20px;
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+form {
+  justify-content: center;
+  align-items: center;
+  width: 45%;
+}
+
+.registration-page {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  background-color: #ccc;
+}
+
+form {
+  height: 50%;
+}
+
+form h1 {
+  font-size: 1.5rem;
+  justify-content: center;
+  margin-bottom: 5rem;
+  color: rgb(141, 141, 141);
+}
+
+.box {
+  width: 200px;
+  height: 100px;
+  background-color: black;
+}
