@@ -1,0 +1,28 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 30px;
+  padding-right: 30px;
+  background-color: #e5e5e5;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 70px;
+  width: 70px;
+}
+
+.brandname {
+  color: #1dabfd;
+}
+
+.user {
+  height: 35px;
+  width: 35px;
+  color: #4a71ff;
+}
