@@ -9,6 +9,7 @@ import dotenvExpand from 'dotenv-expand';
 import config from './config/serverconf.js';
 
 import userRoutes from './routes/user.js';
+import loginRoutes from './routes/login.js';
 import contentEntryRoutes from './routes/contentEntry.js';
 import timelineRoutes from './routes/timeline.js';
 
@@ -28,9 +29,9 @@ async function testroute (fastify, options) {
 
 // fastify.register(require('fastify-swagger'), swagger.options);
 fastify.register(cors, { origin: `${config.url}${config.port}` });
-fastify.register(multipart); 
+fastify.register(multipart);
 
-var routeList = [userRoutes, contentEntryRoutes, timelineRoutes];
+var routeList = [userRoutes, contentEntryRoutes, timelineRoutes, loginRoutes];
 for(let idx in routeList) {
   routeList[idx].forEach((route, idx) => {
     fastify.route(route);
