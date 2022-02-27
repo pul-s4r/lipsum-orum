@@ -1,0 +1,35 @@
+.member {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  height: 65px;
+  width: 500px;
+  border-bottom: #c5c5c5 1px solid;
+}
+
+.member:last-of-type {
+  border-bottom: none;
+}
+
+.member-profile {
+  height: 45px;
+  width: 45px;
+  border-radius: 50px;
+}
+
+.member-info {
+  margin-left: 20px;
+  width: 500px;
+}
+
+.member-email {
+  color: #c5c5c5;
+  margin-top: 7px;
+  font-weight: normal;
+  font-size: 0.8rem;
+}
+
+.member-settings {
+  font-size: 1.4rem;
+  color: #c5c5c5;
+}

@@ -12,7 +12,7 @@ import AddMemoryModal from "../AddMemoryModal/AddMemoryModal";
 import ViewMemoryModal from "../EventModal/ViewMemoryModal/ViewMemoryModal";
 
 const Timeline = (props) => {
-  const [isInviteMemberModalOpen, setIsInviteMemberModalOpen] = useState(false);
+  const [isInviteMemberModalOpen, setIsInviteMemberModalOpen] = useState(true);
   const [isAddMemoryModalOpen, setIsAddMemoryModalOpen] = useState(false);
   const [isViewMemoryModalOpen, setIsViewMemoryModalOpen] = useState(false);
   const [currentMemory, setCurrentMemory] = useState();

@@ -1,8 +1,7 @@
 import Modal from "../../UI/Modal";
 import classes from "./InviteMemberModal.module.css";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGear } from "@fortawesome/free-solid-svg-icons";
+import Member from "./Member/Member";
 
 const InviteMemberModal = (props) => {
   return (
@@ -14,26 +13,11 @@ const InviteMemberModal = (props) => {
             Your friends(10)
           </div>
           <div className={classes["member-container__content"]}>
-            {/* Member Component */}
-            <div className={classes["member"]}>
-              <img
-                className={classes["member-profile"]}
-                src=""
-                alt="member-profile"
-              />
-              <div className={classes["member-info"]}>
-                <div className={classes["member-name"]}>Marie Powell</div>
-                <div className={classes["member-email"]}>
-                  MariePowell@email.com
-                </div>
-              </div>
-              <div className={classes["member-settings-container"]}>
-                <FontAwesomeIcon
-                  className={classes["member-settings"]}
-                  icon={faGear}
-                />
-              </div>
-            </div>
+            <Member />
+            <Member />
+            <Member />
+            <Member />
+            <Member />
           </div>
         </div>
         <div className={classes["invite-member-container"]}>
@@ -45,7 +29,10 @@ const InviteMemberModal = (props) => {
               Share Link
             </div>
             <div className={classes["invite-member__content__input-container"]}>
-              <div className={classes["invite-member__content__input"]}></div>
+              <input
+                className={classes["invite-member__content__input"]}
+                placeholder="memorylane.com/invite/230ujadf949adkshf ..."
+              ></input>
               <button
                 type="button"
                 className={classes["invite-member__content__link"]}
