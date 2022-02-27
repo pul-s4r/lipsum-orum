@@ -12,12 +12,12 @@ small {
 }
 
 .content {
-  padding: 2rem 1rem 1rem;
   color: var(--primary-main);
   background-color: #f8f8f8;
   border-radius: 2.5%;
   display: flex;
   flex-direction: column;
+  font-family: "Lexend", sans-serif;
 }
 .content input {
   background-color: #f2f7fb;
@@ -58,6 +58,8 @@ small {
   display: flex;
   flex-direction: column;
   margin-left: 13.5px;
+  margin-top: 20px;
+  margin-bottom: 15px;
 }
 
 .column_2 {

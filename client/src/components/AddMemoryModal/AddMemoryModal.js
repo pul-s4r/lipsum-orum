@@ -8,22 +8,22 @@ const AddMemoryModal = (props) => {
       <form>
         <div className={styles.content}>
           <div className={styles.column}>
-            <h2>Add a memory</h2>
+            <h2>
+              <strong>Add a memory</strong>
+            </h2>
           </div>
 
           <div className={styles.first_row}>
             <div className={styles.column_1}>
               <label for="title">
-                <h4>
-                  Title{" "}
-                  <small className={styles.smallText}>(50 characters)</small>
-                </h4>
+                <strong>Title</strong>
+                <small className={styles.smallText}> (50 characters)</small>
               </label>
               <input maxlength="50" id="title" type="text" name="title"></input>
             </div>
             <div className={styles.column_2}>
               <label for="date">
-                <h4>Date</h4>
+                <strong>Date</strong>
               </label>
               <input id="date" type="date" name="date" />
             </div>
@@ -59,9 +59,9 @@ const AddMemoryModal = (props) => {
           </div>
           <div className={styles.column}>
             <label for="tags">
-              <h4>
+              <strong>
                 Tags <small className={styles.smallText}>(max.10)</small>
-              </h4>
+              </strong>
             </label>
             <input
               id="tags"
@@ -71,8 +71,8 @@ const AddMemoryModal = (props) => {
             ></input>
           </div>
           <div className={styles.column}>
-            <label for="video">
-              <h4>Embed Video</h4>
+            <label id="video" for="video">
+              <strong>Embed Video</strong>
             </label>
             <input
               id="video"
