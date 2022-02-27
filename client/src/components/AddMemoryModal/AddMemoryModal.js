@@ -3,6 +3,8 @@ import styles from "./AddMemoryModal.module.css";
 import Modal from "../UI/Modal";
 
 const AddMemoryModal = (props) => {
+  const navigateToTimeline = () => navigateToTimeline("/timeline");
+
   return (
     <Modal onClose={props.onClose}>
       <form>

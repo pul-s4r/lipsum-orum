@@ -74,15 +74,19 @@ const RegistrationForm = () => {
           </div>
           <ExistingTimeline
             handleCheck={checkHandler}
-            memoryStatus={existingMemory}/>
+            memoryStatus={existingMemory}
+          />
         </div>
         <div className={styles.info}>
           <h1>Start creating memories</h1>
           <img src={Smiley} alt="Smiley face, bear and portrait" />
-           <div className="box"></div>
-          <p>Description of app</p>
+          <div className="box"></div>
+          <p>
+            Build, personalize and share your precious memories with those you
+            love the most.
+          </p>
+        </div>
       </div>
-    </div>
     </div>
   );
 };

@@ -109,3 +109,8 @@ form h1 {
   justify-content: center;
   display: flex;
 }
+
+.info p {
+  font-size: 25px;
+  margin: 30px;
+}
