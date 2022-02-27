@@ -7,12 +7,14 @@ const TimelineEventCard = (props) => {
   let shortDescription = props.description.slice(0, 100);
   if (shortDescription.length === 100) shortDescription += "...";
 
+  let eventDate = new Date(props.eventDate); 
+
   let date =
-    props.date.getDay() +
+    eventDate.getDay() +
     " " +
-    config.MONTHS[props.date.getMonth()] +
+    config.MONTHS[eventDate.getMonth()] +
     " " +
-    props.date.getFullYear();
+    eventDate.getFullYear();
 
   const cardClickHandler = () => {
     props.onClick(props.id);
