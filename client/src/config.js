@@ -1,6 +1,8 @@
-import dummyImg from "./assets/dummy.png";
-import dummyImg2 from "./assets/dummy2.jpg";
-import dummyImg3 from "./assets/dummy3.jpg";
+import birthday from "./assets/birthday.svg";
+import birthday2 from "./assets/birthday2.svg";
+import wedding from "./assets/wedding.svg";
+import party1 from "./assets/justparty.svg";
+import picnic from "./assets/picnic.svg";
 
 export const CHRONO_TIMELINE_SETTINGS = {
   mode: "VERTICAL_ALTERNATING",
@@ -9,33 +11,50 @@ export const CHRONO_TIMELINE_SETTINGS = {
     secondary: "#FFB44F",
     cardBgColor: "#4a71ff",
   },
-  cardWidth: "230",
+  cardWidth: "320",
   lineWidth: "3",
 };
 
 export const DUMMY_EVENTS = [
   {
     id: 1,
-    title: "Watching Sunset",
+    title: "Ken's 31th Birthday",
     date: new Date(2001, 0, 1),
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris semper nisi ac nunc vehicula, in convallis risus consequat. Phasellus semper lacus nisl, at pharetra felis dignissim sed. Nunc et orci ac mi malesuada placerat. Nunc ultrices ante eu velit rutrum, vel laoreet metus varius. Quisque et lectus quam. In accumsan, sem id condimentum lobortis, elit urna porttitor elit, id lacinia dolor orci a tellus. Mauris in tortor ac justo lacinia tincidunt at in mauris. Etiam hendrerit neque non libero vehicula varius.",
-    imgSrc: dummyImg,
+    imgSrc: birthday,
   },
   {
     id: 2,
-    title: "Watching Sunset",
+    title: "Kim's 20th Brithday",
     date: new Date(2003, 2, 1),
-
-    description: "Watched a sunset on the rooftop",
-    imgSrc: dummyImg2,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris semper nisi ac nunc vehicula, in convallis risus consequat. Phasellus semper lacus nisl, at pharetra felis dignissim sed. Nunc et orci ac mi malesuada placerat. Nunc ultrices ante eu velit rutrum, vel laoreet metus varius. Quisque et lectus quam. In accumsan, sem id condimentum lobortis, elit urna porttitor elit, id lacinia dolor orci a tellus. Mauris in tortor ac justo lacinia tincidunt at in mauris. Etiam hendrerit neque non libero vehicula varius.",
+    imgSrc: birthday2,
   },
   {
     id: 3,
-    title: "Watching Sunset",
+    title: "Rob's Wedding with Susan",
     date: new Date(2005, 7, 1),
-    description: "Watched a sunset on the rooftop",
-    imgSrc: dummyImg3,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris semper nisi ac nunc vehicula, in convallis risus consequat. Phasellus semper lacus nisl, at pharetra felis dignissim sed. Nunc et orci ac mi malesuada placerat. Nunc ultrices ante eu velit rutrum, vel laoreet metus varius. Quisque et lectus quam. In accumsan, sem id condimentum lobortis, elit urna porttitor elit, id lacinia dolor orci a tellus. Mauris in tortor ac justo lacinia tincidunt at in mauris. Etiam hendrerit neque non libero vehicula varius.",
+    imgSrc: wedding,
+  },
+  {
+    id: 3,
+    title: "Family gathing party",
+    date: new Date(2005, 7, 1),
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris semper nisi ac nunc vehicula, in convallis risus consequat. Phasellus semper lacus nisl, at pharetra felis dignissim sed. Nunc et orci ac mi malesuada placerat. Nunc ultrices ante eu velit rutrum, vel laoreet metus varius. Quisque et lectus quam. In accumsan, sem id condimentum lobortis, elit urna porttitor elit, id lacinia dolor orci a tellus. Mauris in tortor ac justo lacinia tincidunt at in mauris. Etiam hendrerit neque non libero vehicula varius.",
+    imgSrc: party1,
+  },
+  {
+    id: 4,
+    title: "Picnic day",
+    date: new Date(2005, 7, 1),
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris semper nisi ac nunc vehicula, in convallis risus consequat. Phasellus semper lacus nisl, at pharetra felis dignissim sed. Nunc et orci ac mi malesuada placerat. Nunc ultrices ante eu velit rutrum, vel laoreet metus varius. Quisque et lectus quam. In accumsan, sem id condimentum lobortis, elit urna porttitor elit, id lacinia dolor orci a tellus. Mauris in tortor ac justo lacinia tincidunt at in mauris. Etiam hendrerit neque non libero vehicula varius.",
+    imgSrc: picnic,
   },
 ];
 
