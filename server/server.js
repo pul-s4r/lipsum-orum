@@ -28,7 +28,11 @@ async function testroute (fastify, options) {
 };
 
 // fastify.register(require('fastify-swagger'), swagger.options);
-fastify.register(cors, { origin: `${config.url}${config.port}` });
+fastify.register(cors, {
+  // origin: `http://${config.url}:${config.port}`,
+  origin: '*', 
+  methods: ['GET', 'PUT', 'POST', 'DELETE'],
+});
 fastify.register(multipart);
 
 var routeList = [userRoutes, contentEntryRoutes, timelineRoutes, loginRoutes];
