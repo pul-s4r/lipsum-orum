@@ -82,10 +82,10 @@ const RegistrationForm = () => {
         <div className={styles.info}>
           <h1>Start creating memories</h1>
           <Carousel>
-          <Carousel.Item interval = {10000}>
-          <img src={Smiley} alt="Smiley face, bear and portrait" />
-          <div className="box"></div>
-          <Carousel.Caption>
+                  <Carousel.Item interval = {10000}>
+                  <img src={Smiley} alt="Smiley face, bear and portrait" />
+                  <div className="box"></div>
+                  <Carousel.Caption>
           <p>Description of app</p>
           </Carousel.Caption>
           </Carousel.Item>
