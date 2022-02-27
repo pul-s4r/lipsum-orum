@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Noto+Sans+Display&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@600&family=Roboto&display=swap");
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  height: 600px;
+  width: 100%;
+}
+.main {
+  display: flex;
+  flex-direction: row;
+  height: 255px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.photo {
+  height: 230px;
+  width: 230px;
+  object-fit: cover;
+  border-radius: 5%;
+}
+
+.header-info {
+  display: flex;
+  flex-direction: column;
+  height: 250px;
+  width: 250px;
+  margin-left: 1.5rem;
+}
+
+.name {
+  font-size: 26px;
+  font-family: "Lexend", sans-serif;
+}
+
+.highlight {
+  font-weight: bold;
+  color: #4a71ff;
+}
+
+.event-date {
+  display: flex;
+  margin-top: 10px;
+  font-family: "Roboto", sans-serif;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.post-information {
+  display: flex;
+  align-items: flex-end;
+  margin-top: 15px;
+}
+
+.author {
+  font-size: 13px;
+  font-weight: bold;
+  font-style: italic;
+  margin-right: 20px;
+}
+
+.post-date {
+  font-size: 13px;
+  font-style: italic;
+  margin-bottom: 1px;
+}
+
+.description {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+.details {
+  display: flex;
+  flex-direction: row;
+  height: 335px;
+  width: 100%;
+}
+
+.details__comments {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 345px;
+}
+
+.details__comments__title {
+  margin-bottom: px;
+}
+
+.details__tags {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 158px;
+  margin-left: 15px;
+}
+
+.details__tags__title {
+  margin-bottom: 10px;
+}

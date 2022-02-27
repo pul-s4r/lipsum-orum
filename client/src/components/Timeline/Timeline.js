@@ -1,182 +1,79 @@
-import classes from "./Timeline.module.css";
 import { Chrono } from "react-chrono";
+import * as config from "../../config";
+import { useState } from "react";
+
+import classes from "./Timeline.module.css";
 
 import TimelineHeader from "./TimelineHeader";
 import TimelineEventCard from "./TimelineEventCard";
-
-import dummyImg from "../../assets/dummy.png";
+import TimelineFooter from "./TimelineFooter";
+import InviteMemberModal from "./InviteMemberModal/InviteMemberModal";
+import AddMemoryModal from "../AddMemoryModal/AddMemoryModal";
+import ViewMemoryModal from "../EventModal/ViewMemoryModal/ViewMemoryModal";
 
 const Timeline = (props) => {
-  const items = [
-    {
-      title: "May 1940",
-      cardTitle: "Dunkirk",
-      url: "http://www.history.com",
-      cardSubtitle:
-        "Men of the British Expeditionary Force (BEF) wade out to..",
-      cardDetailedText:
-        "Men of the British Expeditionary Force (BEF) wade out to..",
-      media: {
-        type: "IMAGE",
-        source: {
-          url: "http://someurl/image.jpg",
-        },
-      },
-    },
-  ];
+  const [isInviteMemberModalOpen, setIsInviteMemberModalOpen] = useState(true);
+  const [isAddMemoryModalOpen, setIsAddMemoryModalOpen] = useState(false);
+  const [isViewMemoryModalOpen, setIsViewMemoryModalOpen] = useState(false);
+  const [currentMemory, setCurrentMemory] = useState();
+
+  const cardClickHandler = (memoryId) => {
+    setIsViewMemoryModalOpen(true);
+    setCurrentMemory(getMemory(memoryId));
+  };
+
+  const getMemory = (memoryId) => {
+    return config.DUMMY_EVENTS_DETAILED[0];
+  };
+
+  const events = config.DUMMY_EVENTS.map((event) => {
+    return (
+      <TimelineEventCard key={event.id} onClick={cardClickHandler} {...event} />
+    );
+  });
+
+  const viewMemoryModalCloseHandler = () => {
+    setIsViewMemoryModalOpen(false);
+  };
+
+  const addMemoryModalOpenHandler = () => {
+    setIsAddMemoryModalOpen(true);
+  };
+
+  const addMemoryModalCloseHandler = () => {
+    setIsAddMemoryModalOpen(false);
+  };
+
+  const isInviteMemeberModalOpenHandler = () => {
+    setIsInviteMemberModalOpen(true);
+  };
+
+  const isInviteMemeberModalCloseHandler = () => {
+    setIsInviteMemberModalOpen(false);
+  };
 
   return (
     <div className={classes.timeline}>
+      {isViewMemoryModalOpen && (
+        <ViewMemoryModal
+          onClose={viewMemoryModalCloseHandler}
+          memory={currentMemory}
+        />
+      )}
+      {isInviteMemberModalOpen && (
+        <InviteMemberModal onClose={isInviteMemeberModalCloseHandler} />
+      )}
+      {isAddMemoryModalOpen && (
+        <AddMemoryModal onClose={addMemoryModalCloseHandler} />
+      )}
       <TimelineHeader />
-      <Chrono
-        mode="VERTICAL_ALTERNATING"
-        theme={{
-          primary: "#1dabfd",
-          secondary: "#FFB44F",
-        }}
-        cardWidth="330"
-        lineWidth="3"
-      >
-        <TimelineEventCard imgUrl={dummyImg} />
-        <TimelineEventCard />
-      </Chrono>
+      <Chrono {...config.CHRONO_TIMELINE_SETTINGS}>{events}</Chrono>
+      <TimelineFooter
+        onClickAddMemory={addMemoryModalOpenHandler}
+        onClickInviteMemeber={isInviteMemeberModalOpenHandler}
+      />
     </div>
   );
 };
 
 export default Timeline;
-/*
-
-const items2 = [
-  { title: "Timeline title 1", cardTitle: "Card Title 1" },
-  { title: "Timeline title 2", cardTitle: "Card Title 2" },
-  { title: "Timeline title 2", cardTitle: "Card Title 2" },
-  { title: "Timeline title 2", cardTitle: "Card Title 2" },
-  { title: "Timeline title 2", cardTitle: "Card Title 2" },
-];
-
-<Chrono items={items} mode="VERTICAL_ALTERNATING" slideShow scrollable />
-
-const items = [
-    {
-      title: "May 1940",
-      cardTitle: "Dunkirk",
-      url: "http://www.history.com",
-      cardSubtitle:
-        "Men of the British Expeditionary Force (BEF) wade out to..",
-      cardDetailedText:
-        "Men of the British Expeditionary Force (BEF) wade out to..",
-      media: {
-        type: "IMAGE",
-        source: {
-          url: "http://someurl/image.jpg",
-        },
-      },
-    },
-    {
-      title: "May 1940",
-      cardTitle: "Dunkirk",
-      url: "http://www.history.com",
-      cardSubtitle:
-        "Men of the British Expeditionary Force (BEF) wade out to..",
-      cardDetailedText:
-        "Men of the British Expeditionary Force (BEF) wade out to..",
-      media: {
-        type: "IMAGE",
-        source: {
-          url: "http://someurl/image.jpg",
-        },
-      },
-    },
-    {
-      title: "May 1940",
-      cardTitle: "Dunkirk",
-      url: "http://www.history.com",
-      cardSubtitle:
-        "Men of the British Expeditionary Force (BEF) wade out to..",
-      cardDetailedText:
-        "Men of the British Expeditionary Force (BEF) wade out to..",
-      media: {
-        type: "IMAGE",
-        source: {
-          url: "http://someurl/image.jpg",
-        },
-      },
-    },
-    {
-      title: "May 1940",
-      cardTitle: "Dunkirk",
-      url: "http://www.history.com",
-      cardSubtitle:
-        "Men of the British Expeditionary Force (BEF) wade out to..",
-      cardDetailedText:
-        "Men of the British Expeditionary Force (BEF) wade out to..",
-      media: {
-        type: "IMAGE",
-        source: {
-          url: "http://someurl/image.jpg",
-        },
-      },
-    },
-    {
-      title: "May 1940",
-      cardTitle: "Dunkirk",
-      url: "http://www.history.com",
-      cardSubtitle:
-        "Men of the British Expeditionary Force (BEF) wade out to..",
-      cardDetailedText:
-        "Men of the British Expeditionary Force (BEF) wade out to..",
-      media: {
-        type: "IMAGE",
-        source: {
-          url: "http://someurl/image.jpg",
-        },
-      },
-    },
-    {
-      title: "May 1940",
-      cardTitle: "Dunkirk",
-      url: "http://www.history.com",
-      cardSubtitle:
-        "Men of the British Expeditionary Force (BEF) wade out to..",
-      cardDetailedText:
-        "Men of the British Expeditionary Force (BEF) wade out to..",
-      media: {
-        type: "IMAGE",
-        source: {
-          url: "http://someurl/image.jpg",
-        },
-      },
-    },
-    {
-      title: "May 1940",
-      cardTitle: "Dunkirk",
-      url: "http://www.history.com",
-      cardSubtitle:
-        "Men of the British Expeditionary Force (BEF) wade out to..",
-      cardDetailedText:
-        "Men of the British Expeditionary Force (BEF) wade out to..",
-      media: {
-        type: "IMAGE",
-        source: {
-          url: "http://someurl/image.jpg",
-        },
-      },
-    },
-    {
-      title: "May 1940",
-      cardTitle: "Dunkirk",
-      url: "http://www.history.com",
-      cardSubtitle:
-        "Men of the British Expeditionary Force (BEF) wade out to..",
-      cardDetailedText:
-        "Men of the British Expeditionary Force (BEF) wade out to..",
-      media: {
-        type: "IMAGE",
-        source: {
-          url: "http://someurl/image.jpg",
-        },
-      },
-    },
-  ];
-*/

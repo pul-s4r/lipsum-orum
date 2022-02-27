@@ -14,3 +14,7 @@ body,
   --secondary-light: #ffb44f;
   --primary-text: #000000;
 }
+
+* {
+  box-sizing: border-box;
+}
