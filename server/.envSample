@@ -1,0 +1,3 @@
+MDB_USERNAME = "<username>"
+MDB_PASSWORD = "<password>"
+CONNECTION_URL = mongodb+srv://$MDB_USERNAME:$MDB_PASSWORD@lipsumorum.dq7fy.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
